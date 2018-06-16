@@ -11,3 +11,4 @@ In this demo, we will walk you through how SmartHotel 360, a fictitious hotel, u
 ## Agile Planning
 
 The SmartHotel360 team works off of a backlog of requirements or “user stories” in VSTS. The backlog is prioritized so the most important user stories are at the top. The product owner owns the backlog and adds, changes, and reprioritizes user stories based on the customer’s needs. 
+
