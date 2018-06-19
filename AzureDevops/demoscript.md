@@ -24,8 +24,12 @@ Now this is great and fantastic for a sample application - But what if you wante
 
 Go back to the code repo again. As this is a Git repo, you will need to clone the this repo to your local machine. Select **Clone** and copy the link.  Open a command line, type *git clone* and paste the text you just copied to clone the repo. And once it's done cloning, you can open an explorer window to see the cloned code. 
 
-Delete the code and paste the new code[where to copy the code from]
+Delete the code. We will copy and paste the actual code of our application
 
+>**Note** The PartsUnlimited code from https://github.com/Microsoft/PartsUnlimitedE2E/ is used. Make sure you switch to *dacpac* branch by using the following command:
+```
+git checkout <<branch name>>
+```
 Return back to the command line.  Go ahead and add everything, then commit and push your code back into VSTS. 
 
 Now once the code hits VSTS, it's going to kick off a build as it is set to be a continuous integration - that is to run every time when the code is updated. 

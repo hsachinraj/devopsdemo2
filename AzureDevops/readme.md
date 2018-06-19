@@ -56,8 +56,6 @@ We will now move to **Work** hub. With VSTS, teams can plan and track the progre
 
 1. Once you have defined the product backlog, you can order them and create a prioritized list of work. To reorder your backlog, you simply have to drag the work items.
 
-
-
 1. As you start working on the work items, you will need to track the status of each item. VSTS makes it easy with **boards** that allows you to visualize the flow of work items. If you are working from the Stories (Agile) or Backlog items (Scrum) pages, you have access to the product backlog and Kanban board. When you work from a sprint page, you have access to the sprint backlog and task board.
 
 1. VSTS provides extensive customization capabilities to the boards. You can add new or edit existing columns. You can define what work items should appear in the board. You can also use style rules and tag rules to highlight cards based on their property values or tags.
