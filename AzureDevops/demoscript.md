@@ -24,12 +24,10 @@ Now this is great and fantastic for a sample application - But what if you wante
 
 Go back to the code repo again. As this is a Git repo, you will need to clone the this repo to your local machine. Select **Clone** and copy the link.  Open a command line, type *git clone* and paste the text you just copied to clone the repo. And once it's done cloning, you can open an explorer window to see the cloned code. 
 
-Delete the code. We will copy and paste the actual code of our application
+Delete the code. We will get the actual code of our application
 
->**Note** The PartsUnlimited code from https://github.com/Microsoft/PartsUnlimitedE2E/ is used. Make sure you switch to *dacpac* branch by using the following command:
-```
-git checkout <<branch name>>
-```
+>**Note** The PartsUnlimited code from https://github.com/Microsoft/PartsUnlimitedE2E/ is used. You can download and extract the code from this link - https://github.com/Microsoft/PartsUnlimitedE2E/archive/dacpac.zip. 
+
 Return back to the command line.  Go ahead and add everything, then commit and push your code back into VSTS. 
 
 Now once the code hits VSTS, it's going to kick off a build as it is set to be a continuous integration - that is to run every time when the code is updated. 
@@ -39,6 +37,9 @@ Go to the VSTS poral and look at builds, you'll see that a new build has been ki
 When the build is finished a release gets triggered - the release will pick up those bits and deploy the application all the way out into Azure.  Customizing the Release is very similar to customizing the build pipeline. In addition you could approvals - say for instance, you want to obtain an approval from one or more person before the deployment starts or after it is finished.
 
 Wait for the release to finish and then go back to the app again. Select the endpoint, and you should see you code now deployed!
+
+## 
+
 
 ## Summary
 **Azure DevOps Project** makes it incredibly easy for you to get started with scaffolding an ,  just a couple of clicks to go from nothing at all into a full end-to-end DevOps Projects. Now we are the only cloud vendor that makes it so incredibly easy to go from nothing to this full DevOps pipeline where it's ready for you just to jump in and start editing code. Now currently we support .NET, of course, Java, Node, PHP, and Python. But we have a lot more languages that are coming as well as support for VMs. Now if you want to learn more, please go to the link. http://aka.ms/devops-projects  where our docs will walk you through everything you need to know. Thank you very much.  
