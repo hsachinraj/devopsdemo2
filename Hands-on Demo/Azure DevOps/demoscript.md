@@ -1,4 +1,4 @@
-# Demo Script for Demomate
+# Azure DevOps
 
 VSTS is the ultimate DevOps solution into Azure.  With the new Azure DevOps Project we make it very simple to build your pipeline into Azure. The DevOps Project sets up everything you need for developing, deploying, and monitoring your application.
 
@@ -38,7 +38,11 @@ When the build is finished a release gets triggered - the release will pick up t
 
 Wait for the release to finish and then go back to the app again. Select the endpoint, and you should see you code now deployed!
 
-## 
+## Continuous Testing
+
+An another important aspect of DevOps is continuous testing. Integrating and automating tests at every phase  of the lifecycle helps teams ensure high-quality, reliable software. Next in the demo, let us see how we can embed testing within both CI and CD pipelines. Let's go to **Builds** and open the build definition in edit mode. You will notice there is already a Visual Studio task - this task scans for test assemblies within a specified directory. There are several options available for us to select and control tests that we want to run. We can select to collect **code coverage** information during the run and upload the results to the server. An another interesting, very useful option is **Run only impacted tests** - For a given code commit entering the pipeline, only the relevant tests required to validate that commit will be selected and run. This will make tests to complete faster, if there is a failure you will get to know about it faster, and because it is all scoped by relevance, analysis will be faster as well. When selecting this option, you can specify after how many test runs we want all tests to run. 
+
+
 
 
 ## Summary
