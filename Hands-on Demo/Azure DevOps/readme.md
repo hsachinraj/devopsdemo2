@@ -30,31 +30,51 @@ You will also see the infrastructure that has been deployed out into Azure.  So,
 
 ## Part 2: Exploring the project in-depth
 
- Let's take a look at the code and pipeline created in VSTS. Select the **Project HomePage** link to to open the VSTS project page. Select **Code** and you will see the repo where the sample app has been uploaded. Navigate to the build and you'll see the build def created. Click **Edit**to see what is inside the build definition. You will see the build pipeline containing tasks that makes sense for the technology that you picked. And same with release. Select **Releases** from the Build tab and you will see a CD pipeline created and configured to pick the deployment artifact from the build and deploy it to the target you chose. In this case, a node app deployed to Azure app service for container. When the build and release is successful, you should be able to see the application running - [back on the Azure portal, select the application endpoint]
+ Let's take a look at the code and pipeline created in VSTS. Select the **Project HomePage** link to to open the VSTS project page. Select **Code** and you will see the repo where the sample app has been uploaded. 
 
-Now this is great and fantastic for a sample application - But what if you wanted to customize this to deploy your code? That's actually very easy to do and let us see how you can do that.
+ ![Initial Code](images/initialsampleapp.png)
+ 
+ 1. Navigate to the build and you'll see the build def created. Click **Edit**to see what is inside the build definition. You will see the build pipeline containing tasks that makes sense for the technology that you picked. And same with release. 
 
-Go back to the code repo again. As this is a Git repo, you will need to clone the this repo to your local machine. Select **Clone** and copy the link.  Open a command line, type *git clone* and paste the text you just copied to clone the repo. And once it's done cloning, you can open an explorer window to see the cloned code. 
+    ![Initial Code](images/builddef.png)
+ 
+1. Select **Releases** from the Build tab and you will see a CD pipeline created and configured to pick the deployment artifact from the build and deploy it to the target you chose. In this case, a node app deployed to Azure app service for container. When the build and release is successful, you should be able to see the application running - [back on the Azure portal, select the application endpoint]
 
-Delete the code. We will get the actual code of our application
+    Now this is great and fantastic for a sample application - But what if you wanted to customize this to deploy your code? That's actually very easy to do and let us see how you can do that.
 
->**Note** The PartsUnlimited code from https://github.com/Microsoft/PartsUnlimitedE2E/ is used. You can download and extract the code from this link - https://github.com/Microsoft/PartsUnlimitedE2E/archive/dacpac.zip. 
+    Go back to the code repo again. As this is a Git repo, you will need to clone the this repo to your local machine. Select **Clone** and copy the link.  Open a command line, type *git clone* and paste the text you just copied to clone the repo. And once it's done cloning, you can open an explorer window to see the cloned code. 
 
-Return back to the command line.  Go ahead and add everything, then commit and push your code back into VSTS. 
+1. Delete the code. We will get the actual code of our application
 
-Now once the code hits VSTS, it's going to kick off a build as it is set to be a continuous integration - that is to run every time when the code is updated. 
+    >**Note** The PartsUnlimited code from https://github.com/Microsoft/PartsUnlimitedE2E/ is used. You can download and extract the code from this link - https://github.com/Microsoft/PartsUnlimitedE2E/archive/dacpac.zip. 
 
-Go to the VSTS poral and look at builds, you'll see that a new build has been kicked off. In most cases, the build should work without any changes but in some cases you might need to customize. Again this is very easy, select **Edit** and then you can customize by adding or removing tasks or change the properties.  Out of the box, VSTS comes with hundreds of tasks that you can just use. In addition to that, there are over 500 build and release tasks created by our partners that you can just download and start using. 
+1. Return back to the command line.  Go ahead and add everything, then commit and push your code back into VSTS. Now once the code hits VSTS, it's going to kick off a build as it is set to be a continuous integration - that is to run every time when the code is updated. 
 
-When the build is finished a release gets triggered - the release will pick up those bits and deploy the application all the way out into Azure.  Customizing the Release is very similar to customizing the build pipeline. In addition you could approvals - say for instance, you want to obtain an approval from one or more person before the deployment starts or after it is finished.
+1. Go to the VSTS poral and look at builds, you'll see that a new build has been kicked off. In most cases, the build should work without any changes but in some cases you might need to customize. Again this is very easy, select **Edit** and then you can customize by adding or removing tasks or change the properties.  Out of the box, VSTS comes with hundreds of tasks that you can just use. In addition to that, there are over 500 build and release tasks created by our partners that you can just download and start using. 
+
+   ![Build Successful](images/buildsuccess.png)
+  
+1. When the build is finished a release gets triggered - the release will pick up those bits and deploy the application all the way out into Azure.  Customizing the Release is very similar to customizing the build pipeline. In addition you could approvals - say for instance, you want to obtain an approval from one or more person before the deployment starts or after it is finished.
 
 Wait for the release to finish and then go back to the app again. Select the endpoint, and you should see you code now deployed!
 
+  ![Parts Unlimited](images/partsunlimited.png)
+
 ## Continuous Testing
 
-An another important aspect of DevOps is continuous testing. Integrating and automating tests at every phase  of the lifecycle helps teams ensure high-quality, reliable software. Next in the demo, let us see how we can embed testing within both CI and CD pipelines. Let's go to **Builds** and open the build definition in edit mode. You will notice there is already a Visual Studio task - this task scans for test assemblies within a specified directory. There are several options available for us to select and control tests that we want to run. We can select to collect **code coverage** information during the run and upload the results to the server. An another interesting, very useful option is **Run only impacted tests** - For a given code commit entering the pipeline, only the relevant tests required to validate that commit will be selected and run. This will make tests to complete faster, if there is a failure you will get to know about it faster, and because it is all scoped by relevance, analysis will be faster as well. When selecting this option, you can specify after how many test runs we want all tests to run. **Save and Queue** the build and when the build finishes, open the build run summary. You will notice the unit test cases have been executed and code coverage collected. You can drill down to the **Code Coverage** and **tests** tabs for  detailed report.
+An another important aspect of DevOps is continuous testing. Integrating and automating tests at every phase  of the lifecycle helps teams ensure high-quality, reliable software. Next in the demo, let us see how we can embed testing within both CI and CD pipelines. 
 
-Similarly we can run tests in releases as well. Now notice at this moment, we’re only releasing into one Dev environment, Let's say we want to deploy this into another environment (say QA, Prod for instance).  We can clone the environment and rename it. Now for each environment we can assign approvers before and after each environment. We can add specify one or more individuals or simply a group or even a combination of both. Open the dev phase and now like we did in the build definition, we can add testing to validate the deployment. Functional, Load and Performance tests are typically run in a release pipeline. You will find several test tasks, OOB or in marketplace available for you to use. 
+1. Let's go to **Builds** and open the build definition in edit mode. You will notice there is already a Visual Studio task - this task scans for test assemblies within a specified directory. There are several options available for us to select and control tests that we want to run. We can select to collect **code coverage** information during the run and upload the results to the server. 
+
+An another interesting, very useful option is **Run only impacted tests** - For a given code commit entering the pipeline, only the relevant tests required to validate that commit will be selected and run. This will make tests to complete faster, if there is a failure you will get to know about it faster, and because it is all scoped by relevance, analysis will be faster as well. When selecting this option, you can specify after how many test runs we want all tests to run. 
+    ![Testing Options](images/testingoptions.png)
+
+1. **Save and Queue** the build and when the build finishes, open the build run summary. You will notice the unit test cases have been executed and code coverage collected. You can drill down to the **Code Coverage** and **tests** tabs for  detailed report.
+    ![Testing](images/testsandcodecoverage.png)
+
+Similarly we can run tests in releases as well. Now notice at this moment, we’re only releasing into one Dev environment, Let's say we want to deploy this into another environment (say QA, Prod for instance).  We can clone the environment and rename it. Now for each environment we can assign approvers before and after each environment. We can add specify one or more individuals or simply a group or even a combination of both. Open the dev phase and now like we did in the build definition, we can add testing to validate the deployment. Functional, Load and Performance tests are typically run in a release pipeline. You will find several test tasks, OOB or in marketplace available for you to use.
+
+![Test Tasks](images/testtasks.png)
 
 ## Summary
 
