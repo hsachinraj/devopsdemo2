@@ -72,9 +72,19 @@ An another interesting, very useful option is **Run only impacted tests** - For 
 1. **Save and Queue** the build and when the build finishes, open the build run summary. You will notice the unit test cases have been executed and code coverage collected. You can drill down to the **Code Coverage** and **tests** tabs for  detailed report.
     ![Testing](images/testsandcodecoverage.png)
 
-Similarly we can run tests in releases as well. Now notice at this moment, we’re only releasing into one Dev environment, Let's say we want to deploy this into another environment (say QA, Prod for instance).  We can clone the environment and rename it. Now for each environment we can assign approvers before and after each environment. We can add specify one or more individuals or simply a group or even a combination of both. Open the dev phase and now like we did in the build definition, we can add testing to validate the deployment. Functional, Load and Performance tests are typically run in a release pipeline. You will find several test tasks, OOB or in marketplace available for you to use.
+1. Similarly we can run tests in releases as well.  Open the dev phase and now like we did in the build definition, we can add testing to validate the deployment. Functional, Load and Performance tests are typically run in a release pipeline. You will find several test tasks, OOB or in marketplace available for you to use.
 
-![Test Tasks](images/testtasks.png)
+    ![Test Tasks](images/testtasks.png)
+
+1. Now notice at this moment, we’re only releasing into one  environment called Dev, Let's say we want to deploy this into another environment (say QA, Prod for instance).  We can clone the environment and rename it. 
+
+    ![Clone Environment](images/cloneenvironment.png)
+
+1. Now for each environment we can assign approvers and gates before and after each environment. Approvals and gates give you additional control over the start and completion of the deployment process. Each environment in a release definition can be configured with pre-deployment and post-deployment conditions that can include waiting for users to manually approve or reject deployments, and checking with other automated systems until specific conditions are verified. In addition, you can configure a manual intervention to pause the deployment process and prompt users to carry out manual tasks, then resume or reject the deployment.
+
+    ![Approvals and Gates](images/approvalsandgates.png)
+
+
 
 ## Summary
 
