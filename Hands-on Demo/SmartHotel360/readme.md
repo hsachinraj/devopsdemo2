@@ -30,6 +30,8 @@ The SmartHotel360 team works off of a backlog of requirements or “user stories
 
 1. When a team member starts to work on a work item, the item is assigned to himself. If that work item needs a code change, they create a **new branch** from the work item. Not only this allows team members to isolate code changes and raise a pull request for users to collaborate on code, it also  supports traceability, providing visibility into all the branches, commits, pull requests, and builds related to the work item.
 
+## Git Version Control
+
 1. SmartHotel360 teams use **Git** for version control. Every change is made in a separate branch. When the change is committed and pushed, a pull request is created so other people can review the changes and provide feedback. Once the feedback are incorporated and the changes are approved, they are merged with the master branch
 
 1. SmartHotel teams also make use of **branch policies** to  enforce code quality and change management standards and also to protect their important branches such as master. Every changes is reviewed by the entire team and need a minimum number of reviewers to approve the changes without rejection
@@ -46,11 +48,29 @@ SmartHotel Teams practice Continuous Integration (CI)  to automate the merging a
 
 1. SmartHotel teams have different build definitions for each type of application - say a build definition for a public website, one for backend services, one for internal booking system, etc.
 
-1. A build definition is a representation of the automation process that the team wants to run to build and test their application. The automation process is a collection of tasks. Out of the box, VSTS comes with hundreds of tasks for building and testing any type of application including .Net, Java, Node, Android, Xcode, and C++ applications.  In addition to that, there are several hundreds of extension created by our partners on the marketplace that can be downloaded and used.
+1. A build definition is a collection of tasks required to run to build and test their application. Out of the box, VSTS comes with hundreds of tasks for building and testing any type of application including .Net, Java, Node, Android, Xcode, and C++ applications.  In addition to that, there are several hundreds of extension created by our partners on the marketplace that can be downloaded and used.
 
 1. SmartHotel Teams use **Hosted agents**, wherever possible, to build and deploy code. These are agents running on Microsoft Azure. Microsoft provides hosted Windows, Linux and MacOS agents. When they need more control and/or need an interactive agent for things such as running automated testing, they use **Private agents** which are self-hosted.
 
-1. 
+1. An another important aspect of DevOps is continuous testing. SmartHotel teams embed automated tests at every phase  of the lifecycle helps to ensure high-quality, reliable software. They run unit tests as part of their Continuous integration build. This helps teams to catch bugs very early on in the development cycle and minimize the cost of fixing them. VSTS supports many unit testing frameworks such as NUnit, XUnit, MSTest, Jasmin, JUnit, etc.
+
+1. Teams also enable **Code Coverage**  to determine if the committed code changes are tested by unit tests. Additionally to speed test executions,teams turn on **Run only impacted tests** option which  only runs the relevant tests, rather than all tests, required to validate the committed code.
+
+1. Only when the code passes all the tests and code coverage rules, the build is considered successful and picked by up release service for deployment. SmartHotel uses VSTS Release service which provides a streamlined experience to deploy the apps to one of Azure's many services, from Azure Web App to Container Registry, SQL Database, Kubernetes Service, etc.
+
+1. Teams use VSTS to fully automate the deployment pipeline from creating the infrastructure, configuring, deploying and validating the deployment. Applications are deployed through multiple environments such as dev, staging before they are deployed to production
+
+1. SmartHotel Teams practice **Infrastructure as Code**, another key DevOps practice that teams use to automatically provision and manage infrastructure. Since they have a diverse portfolio of applications, they need to deploy multiple tools - sometimes even open-source tools such as Terraform. VSTS gives them the flexibility to choose the tool they want to use, including third-party OSS tools. 
+
+1. Teams control the start and completion of the deployment process to environments with **approval and gates**. Each environment in a release definition is configured with pre-deployment and post-deployment conditions that can include waiting for users to manually approve or reject deployments, and checking with other automated systems until specific conditions are verified. 
+
+1. A deployment starts only when the necessary approvals are granted and when a deployment is in progress, just like the Build service, outputs at real-time are displayed in the log console. 
+
+## Traceability and Dashboard
+Share progress and status with your team using configurable team dashboards. Dashboards provide easy-to-read, easy access, real-time information. At a glance, you can make informed decisions without having to drill down into other parts of your team project site.
+
+Use your team project wiki to share information with other team members. 
+
 
 
 

@@ -50,7 +50,7 @@ You will also see the infrastructure that has been deployed out into Azure.  So,
 
 1. Return back to the command line.  Go ahead and add everything, then commit and push your code back into VSTS. Now once the code hits VSTS, it's going to kick off a build as it is set to be a continuous integration - that is to run every time when the code is updated. 
 
-1. Go to the VSTS poral and look at builds, you'll see that a new build has been kicked off. In most cases, the build should work without any changes but in some cases you might need to customize. Again this is very easy, select **Edit** and then you can customize by adding or removing tasks or change the properties.  Out of the box, VSTS comes with hundreds of tasks that you can just use. In addition to that, there are over 500 build and release tasks created by our partners that you can just download and start using. 
+1. Go to the VSTS portal and look at builds, you'll see that a new build has been kicked off. In most cases, the build should work without any changes but in some cases you might need to customize. Again this is very easy, select **Edit** and then you can customize by adding or removing tasks or change the properties.  Out of the box, VSTS comes with hundreds of tasks that you can just use. In addition to that, there are over 500 build and release tasks created by our partners that you can just download and start using. 
 
    ![Build Successful](images/buildsuccess.png)
   
