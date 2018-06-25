@@ -10,7 +10,7 @@ The SmartHotel360 team practices agile development. They follow scrum methodolog
 
 1. The SmartHotel development has multiple feature crew teams - web, mobile and as well as customer crew teams. Teams are autonomous and choose how they want to work - they can choose the WIs they manage, their working days and how they manage bugs, iterations, etc.
 
-1. All feature teams at SmartHotel360 use Scrum and work in sprints. A series of sprints is setup for all teams. While each team can choose their own sprints and sprint intervals, all feature teams follow the same sprint cycle consistently across teams.
+1. A series of sprints is setup for all teams. While each team can choose their own sprints and sprint intervals, all feature teams follow the same sprint cycle consistently across teams.
 
 1. The product owner owns the backlog and adds, changes, and reprioritizes user stories based on the customer’s needs. They create high-level requirements (Epic) which are then mapped to low-level features and user stories. Each user story is then assigned to the respective teams.
 
