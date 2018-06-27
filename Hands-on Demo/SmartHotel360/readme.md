@@ -1,4 +1,4 @@
-# Accelerating DevOps 
+# Accelerating DevOps with VSTS and Azure
 
 Agile software delivery is key because it helps organizations innovate faster and gets new software in the hands of consumers sooner. This requires new, more productive ways of working for enterprise IT teams. Development teams have already undergone several “transformations” in recent years, from the siloed waterfall approach to agile methodology and now DevOps. Companies that have adopted DevOps principles are disrupting industries, innovating faster and leaving their competitors in the dust.
 
